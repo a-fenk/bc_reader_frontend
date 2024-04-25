@@ -4,6 +4,9 @@ import {
   useNavigate,
 } from "react-router-dom";
 
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+
 
 const Home = () => {
   const [id, setId] = useState();
@@ -15,18 +18,16 @@ const Home = () => {
   };
 
   return (
-    <div
-      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
-    >
-      <div>
-        <h4>Enter your id:</h4>
-      </div>
-      <div>
-        <input name="Id" value={id} onChange={(e)=>setId(e.target.value)}  style={{ width: "400px" }} />
-      </div>
-      <button onClick={handleProceed} style={{ width: "400px" }}>
-        Proceed
-      </button>
+    <div className="outer">
+        <div className="inner">
+          <Form>
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                <Form.Label><h4>Enter your ID:</h4></Form.Label>
+                <Form.Control className="w-full" type="text" placeholder="ID" name="Id" value={id} onChange={(e)=>setId(e.target.value)} />
+            </Form.Group>
+            <Button type="submit" className="w-full" onClick={handleProceed}>Proceed</Button>
+          </Form>
+        </div>
     </div>
   );
 };
