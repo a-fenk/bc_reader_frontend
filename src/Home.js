@@ -13,7 +13,6 @@ const Home = () => {
   const navigate = useNavigate();
 
   const handleProceed = (e) => {
-    console.log(id);
     id && navigate(generatePath("/business-cards/:id", { id }));
   };
 

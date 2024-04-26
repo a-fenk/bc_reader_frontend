@@ -4,15 +4,17 @@ import {
   Route,
 } from "react-router-dom";
 import {BusinessCards} from "./BusinessCards.js"
-import {Home} from "./Home.js"
+import {Login} from "./Login.js"
+import {Logout} from "./Logout.js"
 
 export default function App() {
   return (
     <div className="App">
       <Router>
         <Routes>
-          <Route path="/business-cards/:id" element={<BusinessCards />} />
-          <Route path="/" element={<Home />} />
+          <Route path="/:id" element={<Login />} />
+          <Route path="/logout" element={<Logout />} />
+          <Route path="/" element={<BusinessCards />} />
         </Routes>
       </Router>
     </div>
